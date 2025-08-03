@@ -1,0 +1,346 @@
+.offers-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.offers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offers-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.offers-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.offers-header p {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.carousel-track {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Offer Cards */
+.offer-card {
+  min-width: 100%;
+  background: white;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--offer-color);
+}
+
+.offer-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(
+    135deg,
+    var(--offer-color),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.offer-emoji {
+  font-size: 3rem;
+}
+
+.offer-content {
+  flex: 1;
+}
+
+.offer-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.offer-discount {
+  display: inline-block;
+  background: var(--offer-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.offer-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.offer-btn {
+  background: var(--offer-color);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.offer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Navigation */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.prev-btn {
+  left: -25px;
+}
+
+.next-btn {
+  right: -25px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: #007bff;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .offer-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .offer-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .offer-emoji {
+    font-size: 2.5rem;
+  }
+
+  .offer-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .prev-btn {
+    left: -20px;
+  }
+
+  .next-btn {
+    right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-section {
+    padding: 60px 0;
+  }
+
+  .offers-header h2 {
+    font-size: 2rem;
+  }
+
+  .offers-header p {
+    font-size: 1rem;
+  }
+
+  .offer-card {
+    padding: 25px;
+  }
+
+  .offer-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .offer-emoji {
+    font-size: 2rem;
+  }
+
+  .offer-title {
+    font-size: 1.3rem;
+  }
+
+  .offer-description {
+    font-size: 1rem;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .prev-btn {
+    left: -17px;
+  }
+
+  .next-btn {
+    right: -17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-container {
+    padding: 0 15px;
+  }
+
+  .offers-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .offer-card {
+    padding: 20px;
+  }
+
+  .offer-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .offer-emoji {
+    font-size: 1.8rem;
+  }
+
+  .offer-title {
+    font-size: 1.2rem;
+  }
+
+  .offer-discount {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .offer-description {
+    font-size: 0.9rem;
+  }
+
+  .offer-btn {
+    padding: 10px 25px;
+    font-size: 0.8rem;
+  }
+
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .prev-btn {
+    left: -15px;
+  }
+
+  .next-btn {
+    right: -15px;
+  }
+}

@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+# Local Store - E-commerce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern e-commerce platform built with React frontend and Go backend, featuring user authentication, product management, shopping cart functionality, and order processing.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **User Authentication**: Secure login and signup system with JWT tokens
+- **Product Catalog**: Browse and search through available products
+- **Shopping Cart**: Add items to cart and manage quantities
+- **Order Management**: Complete purchase flow with order tracking
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+- **Real-time Updates**: Live cart and inventory updates
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 19.1.1** - Modern UI framework
+- **React Router DOM** - Client-side routing
+- **CSS3** - Custom styling with responsive design
 
-### `npm test`
+### Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Go 1.23.0** - High-performance server language
+- **Gin Framework** - HTTP web framework
+- **GORM** - Object-relational mapping
+- **SQLite** - Lightweight database
+- **JWT** - JSON Web Token authentication
+- **bcrypt** - Password hashing
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ABCDE-Project/
+├── backend/                 # Go backend server
+│   ├── main.go             # Main server file
+│   ├── go.mod              # Go dependencies
+│   ├── go.sum              # Dependency checksums
+│   └── local_store.db      # SQLite database
+├── public/                 # Static assets
+│   ├── index.html          # Main HTML file
+│   ├── favicon.ico         # Site icon
+│   └── manifest.json       # PWA manifest
+├── src/                    # React source code
+│   ├── components/         # Reusable UI components
+│   ├── pages/             # Page components
+│   ├── services/          # API services
+│   ├── styles/            # CSS stylesheets
+│   ├── assets/            # Images and assets
+│   ├── App.js             # Main app component
+│   └── index.js           # App entry point
+├── package.json            # Node.js dependencies
+└── README.md              # Project documentation
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (v16 or higher)
+- Go (v1.23 or higher)
+- Git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/Vyom-Jain1/ABCDE-Project.git
+   cd ABCDE-Project
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install frontend dependencies**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Start the backend server**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   cd backend
+   go run main.go
+   ```
 
-### Code Splitting
+   The backend will start on `http://localhost:8080`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Start the frontend development server**
+   ```bash
+   npm start
+   ```
+   The frontend will start on `http://localhost:3000`
 
-### Analyzing the Bundle Size
+## 📚 API Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Authentication Endpoints
 
-### Making a Progressive Web App
+- `POST /api/users` - Create new user account
+- `POST /api/users/login` - User login
+- `GET /api/users` - List all users (admin only)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Product Endpoints
 
-### Advanced Configuration
+- `GET /api/items` - Get all available products
+- `POST /api/items` - Create new product (admin only)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Cart Endpoints
 
-### Deployment
+- `POST /api/carts` - Add item to cart
+- `GET /api/carts` - Get user's cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Order Endpoints
 
-### `npm run build` fails to minify
+- `POST /api/orders` - Create new order
+- `GET /api/orders` - Get user's orders
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔧 Development
+
+### Frontend Development
+
+```bash
+npm start          # Start development server
+npm run build      # Build for production
+npm test           # Run tests
+```
+
+### Backend Development
+
+```bash
+cd backend
+go run main.go     # Start development server
+go test           # Run tests
+```
+
+## 🚀 Deployment
+
+### Frontend Deployment
+
+1. Build the production version:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `build` folder to your hosting service
+
+### Backend Deployment
+
+1. Build the Go binary:
+   ```bash
+   cd backend
+   go build -o main.exe main.go
+   ```
+2. Deploy the binary and database file to your server
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Vyom Jain**
+
+- GitHub: [@Vyom-Jain1](https://github.com/Vyom-Jain1)
+
+## 🙏 Acknowledgments
+
+- React team for the amazing framework
+- Gin framework for the robust backend
+- GORM for the excellent ORM library
